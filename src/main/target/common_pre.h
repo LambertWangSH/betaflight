@@ -604,3 +604,25 @@
 #if defined(USE_OSD_CUSTOM_TEXT) && !defined(ENABLE_OSD_CUSTOM_TEXT)
 #define ENABLE_OSD_CUSTOM_TEXT 1
 #endif
+
+// --- JHEG474 BAROmeter unlock
+#if defined(JHEG474) || defined(JINH_G474ELRS)
+    #ifndef USE_I2C
+        #define USE_I2C
+    #endif
+    #ifndef USE_I2C_DEVICE_1
+        #define USE_I2C_DEVICE_1
+    #endif
+    #ifndef I2C1_SCL_PIN
+        #define I2C1_SCL_PIN PA15
+    #endif
+    #ifndef I2C1_SDA_PIN
+        #define I2C1_SDA_PIN PB7
+    #endif
+    #ifndef USE_BARO
+        #define USE_BARO
+    #endif
+    #ifndef USE_BARO_BMP280
+        #define USE_BARO_BMP280
+    #endif
+#endif
